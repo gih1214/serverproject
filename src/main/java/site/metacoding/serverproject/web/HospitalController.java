@@ -8,10 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
+import lombok.RequiredArgsConstructor;
 import site.metacoding.serverproject.domain.Hospital;
+import site.metacoding.serverproject.domain.HospitalRepository;
 
+@RequiredArgsConstructor // final이 붙은 애들에 대한 생성자 만들어줌
 @Controller
 public class HospitalController {
+
+    private final HospitalRepository hospitalRepository;
 
     @GetMapping("/download")
     public String download(Model model) {
@@ -27,6 +32,9 @@ public class HospitalController {
         // System.out.println(list.get(0));
 
         // 2. DB에 saveAll() + model에 담기
+        // JPA Repository의 saveAll() 메서드를 활용하여 Insert문을 하나로 묶어 한번에 처리하기
+        hospitalRepository.saveAll(list);
+        // System.out.println(hospitalRepository.saveAll(list));
 
         // 3. 리턴
         return "list";
