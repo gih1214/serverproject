@@ -36,6 +36,11 @@ public class HospitalController {
         hospitalRepository.saveAll(list);
         // System.out.println(hospitalRepository.saveAll(list));
 
+        // saveAll로 DB에 Insert 했다. 이제 model에 담아보자.
+        model.addAttribute("lists", hospitalRepository.findAll());
+        // System.out.println(model.addAttribute("lists",
+        // hospitalRepository.findAll()));
+
         // 3. 리턴
         return "list";
     }
