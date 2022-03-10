@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>PCR 검사 가능 병원 리스트</h1>
+    <hr />
+
+    <!-- 상세정보 보기 시작 -->
+    {{#lists}}
+    <div class="mb-3 mt-3">
+        {{no}}
+    </div>
+    <div class="mb-3">
+        id : {{id}}
+    </div>
+    <div class="mb-3">
+        주소 : {{addr}}
+    </div>
+    <div class="mb-3">
+        운영시작일자 : {{mgtStaDd}}
+    </div>
+    <div class="mb-3">
+        구분코드 : {{pcrPsblYn}}
+    </div>
+    <div class="mb-3">
+        RAT가능여부 : {{ratPsblYn}}
+    </div>
+    <div class="mb-3">
+        요양종별코드 : {{recuClCd}}
+    </div>
+    <div class="mb-3">
+        시군구명 : {{sgguCdNm}}
+    </div>
+    <div class="mb-3">
+        시도명 : {{sidoCdNm}}
+    </div>
+    <div class="mb-3">
+        요양기관명 : {{yadmNm}}
+    </div>
+    <div class="mb-3">
+        암호화된요양기호 : {{ykihoEnc}}
+    </div>
+    <div class="mb-3">
+        {{#xposWgs84}}
+        세계지구x좌표 : {{xposWgs84}}
+        {{/xposWgs84}}
+    </div>
+    <div class="mb-3">
+        {{#yposWgs84}}
+        세계지구y좌표 : {{yposWgs84}}
+        {{/yposWgs84}}
+    </div>
+    <div class="mb-3">
+        {{#xpos}}
+        x좌표 : {{xpos}}
+        {{/xpos}}
+    </div>
+    <div class="mb-3">
+        {{#ypos}}
+        y좌표 : {{ypos}}
+        {{/ypos}}
+    </div>
+    {{/lists}}
+    <!-- 상세정보 보기 끝 -->
+
+</body>
+
+</html>

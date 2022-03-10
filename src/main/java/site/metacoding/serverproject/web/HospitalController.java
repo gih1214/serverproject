@@ -18,6 +18,13 @@ public class HospitalController {
 
     private final HospitalRepository hospitalRepository;
 
+    // 메인 페이지
+    @GetMapping("/")
+    public String home() {
+        return "/download";
+    }
+
+    // 상세 페이지
     @GetMapping("/download")
     public String download(Model model) {
 
