@@ -38,6 +38,7 @@ public class HospitalController {
         List<Hospital> list = Arrays.asList(response);
         // System.out.println(list.get(0));
 
+        // hospitalRepository.deleteAll();
         // 2. DB에 saveAll() + model에 담기
         // JPA Repository의 saveAll() 메서드를 활용하여 Insert문을 하나로 묶어 한번에 처리하기
         hospitalRepository.saveAll(list);
